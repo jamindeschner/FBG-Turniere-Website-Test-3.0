@@ -11,43 +11,43 @@
     <style>
         /* === COLOURED PALETTES & THEMING === */
         :root {
-            --bg-blend: rgba(2, 0, 36, 0.85);
+            --bg-blend: rgba(11, 15, 25, 0.85);
             --bg-img: none;
-            --accent-primary: #00a896;
+            --accent-primary: #0ea5e9;
             --accent-secondary: #028090;
-            --bg-block: #e2e2f0;
-            --text-on-bg: #e2e2f0;
-            --text-on-block: #020024;
+            --bg-block: rgba(22, 30, 49, 0.95);
+            --text-on-bg: #f8fafc;
+            --text-on-block: #f8fafc;
             --text-muted: #94a3b8;
-            --ticker-bg: #050046;
+            --ticker-bg: #0369a1;
             --ticker-text: #ffffff;
-            --card-radius: 12px;
+            --card-radius: 16px;
         }
         
         body.theme-halle {
-            --bg-blend: linear-gradient(135deg, rgba(2, 0, 36, 0.92) 0%, rgba(5, 0, 70, 0.92) 100%);
-            --accent-primary: #00a896;
-            --accent-secondary: #028090;
-            --bg-block: #e2e2f0;
-            --text-on-bg: #e2e2f0;
-            --text-on-block: #020024;
-            --text-muted: #a4b3c6;
-            --ticker-bg: #028090;
+            --bg-blend: linear-gradient(135deg, rgba(11, 19, 41, 0.9) 0%, rgba(20, 30, 57, 0.95) 100%);
+            --accent-primary: #00bcd4;
+            --accent-secondary: #0097a7;
+            --bg-block: rgba(20, 30, 57, 0.95);
+            --text-on-bg: #f8fafc;
+            --text-on-block: #f8fafc;
+            --text-muted: #94a3b8;
+            --ticker-bg: #0097a7;
             --ticker-text: #ffffff;
             --card-radius: 16px;
         }
         
         body.theme-beach {
-            --bg-blend: linear-gradient(135deg, rgba(0, 18, 25, 0.88) 0%, rgba(255, 59, 0, 0.82) 100%);
-            --accent-primary: #ffca00;
-            --accent-secondary: #ee7e12;
-            --bg-block: #ffffff;
-            --text-on-bg: #ffffff;
-            --text-on-block: #001219;
-            --text-muted: #ffd2cc;
-            --ticker-bg: #ff3b00;
+            --bg-blend: linear-gradient(135deg, rgba(12, 74, 96, 0.88) 0%, rgba(234, 88, 12, 0.85) 100%);
+            --accent-primary: #facc15;
+            --accent-secondary: #ea580c;
+            --bg-block: rgba(15, 23, 42, 0.95);
+            --text-on-bg: #f8fafc;
+            --text-on-block: #f8fafc;
+            --text-muted: #cbd5e1;
+            --ticker-bg: #ea580c;
             --ticker-text: #ffffff;
-            --card-radius: 24px;
+            --card-radius: 20px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
@@ -66,7 +66,7 @@
         /* --- NAVBAR & LOGO --- */
         .navbar { 
             position: fixed; top: 37px; left: 0; width: 100%; 
-            background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(20px); 
+            background: rgba(11, 15, 25, 0.7); backdrop-filter: blur(20px); 
             border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 1000; 
             display: flex; flex-direction: column; align-items: center; 
             padding: 1rem; gap: 0.5rem;
@@ -74,7 +74,7 @@
         .nav-logo { font-size: 1.3rem; font-weight: 800; text-align: center; text-transform: uppercase; letter-spacing: 1px; } 
         .nav-logo span { color: var(--accent-primary); }
 
-        /* --- ENDLOS-MARQUEE TICKER (MOBILE OPTIMIZED) --- */
+        /* --- ENDLOS-MARQUEE TICKER --- */
         .countdown-ticker { 
             position: fixed; top: 0; left: 0; width: 100%; 
             background: var(--ticker-bg); color: var(--ticker-text); 
@@ -86,7 +86,7 @@
         .ticker-wrap {
             display: inline-block;
             padding-left: 100%;
-            animation: marquee-speed 25s linear infinite;
+            animation: marquee-speed 22s linear infinite;
         }
         @keyframes marquee-speed {
             0% { transform: translate3d(0, 0, 0); }
@@ -98,26 +98,26 @@
         
         /* MODERN SPORT TOGGLE */
         .toggle-container { display: flex; justify-content: center; margin: 1rem 0 3rem 0; }
-        .sport-toggle { background: rgba(0, 0, 0, 0.5); border: 2px solid rgba(255,255,255,0.1); padding: 0.3rem; display: inline-flex; position: relative; border-radius: 99px; width: 100%; max-width: 360px; }
+        .sport-toggle { background: rgba(0, 0, 0, 0.4); border: 2px solid rgba(255,255,255,0.1); padding: 0.3rem; display: inline-flex; position: relative; border-radius: 99px; width: 100%; max-width: 360px; }
         .toggle-btn { background: transparent; border: none; color: #ffffff; opacity: 0.6; padding: 0.7rem 0; flex: 1; font-size: 0.95rem; font-weight: 700; cursor: pointer; z-index: 2; border-radius: 99px; text-align: center; transition: opacity 0.3s; }
         .toggle-btn.active { opacity: 1; color: #ffffff; } 
-        body.theme-beach .toggle-btn.active { color: #001219; } 
         .toggle-slider { position: absolute; top: 0.3rem; left: 0.3rem; bottom: 0.3rem; width: calc(50% - 0.3rem); background: var(--accent-primary); z-index: 1; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 99px; }
         .sport-toggle.beach-active .toggle-slider { transform: translateX(100%); }
 
-        /* --- TYPOGRAPHY (DIRECT ON BACKGROUND LOOK) --- */
-        .section-headline { font-size: 2.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-on-bg); }
+        /* --- TYPOGRAPHY --- */
+        .section-headline { font-size: 1.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-on-bg); }
         .section-headline span { color: var(--accent-primary); }
-        .section-intro-text { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 700px; line-height: 1.6; }
+        .section-intro-text { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 700px; line-height: 1.6; }
 
         /* --- HIGHLIGHTED BLOCKS --- */
         .highlight-block { 
             background: var(--bg-block); 
             color: var(--text-on-block);
             padding: 2rem; margin-bottom: 3rem; border-radius: var(--card-radius); 
+            border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
-        .highlight-block h2 { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.2rem; border-left: 5px solid var(--accent-secondary); padding-left: 0.7rem; }
+        .highlight-block h2 { font-size: 1.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.2rem; border-left: 5px solid var(--accent-primary); padding-left: 0.7rem; }
         .highlight-block p { color: var(--text-on-block); opacity: 0.85; line-height: 1.6; font-size: 1rem; }
         
         /* BANNER */
@@ -126,78 +126,77 @@
         
         /* VALUES GRID */
         .values-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
-        .value-box { background: var(--accent-primary); color: #000000; padding: 2rem 1.5rem; border-radius: var(--card-radius); text-align: left; transition: transform 0.3s; }
-        body.theme-halle .value-box { color: #ffffff; background: var(--accent-secondary); }
-        .value-number { font-size: 2.5rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; display: block; opacity: 0.4; }
+        .value-box { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2rem 1.5rem; border-radius: var(--card-radius); text-align: left; }
+        .value-number { font-size: 2.5rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; display: block; color: var(--accent-primary); opacity: 0.8; }
         .value-box h3 { font-size: 1.3rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; }
-        .value-box p { color: inherit; opacity: 0.9; font-size: 0.95rem; }
+        .value-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
         
         /* REGISTRATION FORM STYLING */
         .registration-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
         .form-group { margin-bottom: 1.2rem; }
         .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .form-control { width: 100%; background: rgba(0,0,0,0.05); border: 2px solid rgba(0,0,0,0.1); padding: 0.8rem 1rem; color: var(--text-on-block); font-size: 1rem; font-weight: 500; border-radius: 8px; }
-        .form-control:focus { outline: none; border-color: var(--accent-secondary); }
+        .form-control { width: 100%; background: rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.1); padding: 0.8rem 1rem; color: #fff; font-size: 1rem; font-weight: 500; border-radius: 8px; }
+        .form-control:focus { outline: none; border-color: var(--accent-primary); }
+        select.form-control option { background: #141e39; color: #fff; }
         
         /* --- BUTTONS --- */
         .btn { 
             display: inline-block; width: 100%; text-align: center;
-            background: var(--text-on-block); color: var(--bg-block); padding: 0.9rem 2rem; 
+            background: var(--accent-primary); color: #000; padding: 0.9rem 2rem; 
             font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px;
             text-decoration: none; border-radius: 99px; 
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); margin-top: 1rem; border: none; cursor: pointer; 
         }
-        body.theme-halle .btn { background: var(--accent-primary); color: #000000; }
-        body.theme-beach .btn { background: #ff3b00; color: #ffffff; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); opacity: 0.95; }
+        body.theme-beach .btn { color: #000; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); opacity: 0.95; }
         .btn-disabled { background: #334155 !important; color: #94a3b8 !important; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
         
-        .btn-toggle-details { background: transparent !important; color: var(--text-on-block) !important; border: 2px solid var(--text-on-block) !important; }
-        body.theme-halle .btn-toggle-details { color: var(--text-on-bg) !important; border-color: var(--accent-primary) !important; }
+        .btn-toggle-details { background: transparent !important; color: var(--text-on-bg) !important; border: 2px solid var(--accent-primary) !important; }
         
-        .badge-info { background: #ef4444; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; display: inline-block; }
+        .badge-info { background: #ea580c; color: white; padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; display: inline-block; line-height: 1.4; }
         
-        /* --- DYNAMISCHE TURNIERLISTE --- */
+        /* --- TURNIERLISTE --- */
         .archive-section-title { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; margin: 3rem 0 1.5rem 0; color: var(--text-on-bg); letter-spacing: -0.5px; }
         .tournament-list-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
         
         .tournament-list-item { 
             display: flex; flex-direction: column; gap: 1.5rem; 
-            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); 
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); 
             border-radius: var(--card-radius); padding: 1.5rem; backdrop-filter: blur(10px);
         }
         .list-img-box { width: 100%; height: 200px; border-radius: calc(var(--card-radius) - 4px); background-size: cover; background-position: center; }
         .tournament-list-item h3 { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.4rem; }
         
         .accordion-content { 
-            display: none; margin-top: 1rem; padding-top: 1rem; 
-            border-top: 2px dashed rgba(255,255,255,0.1); 
+            display: none; margin-top: 1rem; padding: 1.2rem; 
+            background: rgba(0,0,0,0.2); border-radius: 8px;
+            border-top: 3px solid var(--accent-primary); 
             animation: fadeIn 0.4s ease forwards;
         }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
-        .live-highlight-card { border: 3px solid #ef4444 !important; background: rgba(239, 68, 68, 0.08) !important; position: relative; }
+        .live-highlight-card { border: 2px solid #ef4444 !important; background: rgba(239, 68, 68, 0.05) !important; position: relative; }
         .live-badge { position: absolute; top: 15px; right: 15px; background: #ef4444; color: #fff; padding: 0.3rem 0.8rem; font-weight: 800; font-size: 0.8rem; border-radius: 4px; text-transform: uppercase; }
 
         /* --- COMPACT PAST ARCHIVE --- */
         .compact-past-item {
             display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 1rem 0; gap: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 1rem 0; gap: 0.5rem;
         }
         .compact-past-info { font-size: 1rem; }
-        .compact-past-title { font-weight: 800; text-transform: uppercase; color: var(--text-on-block); }
-        .compact-past-meta { font-size: 0.85rem; opacity: 0.7; font-weight: 500; }
+        .compact-past-title { font-weight: 800; text-transform: uppercase; color: var(--text-on-bg); }
+        .compact-past-meta { font-size: 0.85rem; opacity: 0.7; font-weight: 500; color: var(--text-muted); }
         .compact-past-item .btn { margin-top: 0; padding: 0.5rem 1.2rem; font-size: 0.8rem; width: auto; }
 
-        /* --- RESPONSIVE UPGRADES (TABLET & DESKTOP) --- */
+        /* --- RESPONSIVE UPGRADES --- */
         @media (min-width: 768px) {
             body { padding-top: 150px; }
             .navbar { flex-direction: row; justify-content: space-between; padding: 1.2rem 3rem; }
             .container { padding: 3rem 2rem; }
-            .section-headline { font-size: 3.8rem; }
+            .section-headline { font-size: 3.5rem; }
             .values-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
             .registration-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
-            .tournament-list-item { grid-template-columns: 300px 1fr; display: grid; gap: 2rem; padding: 2rem; }
+            .tournament-list-item { grid-template-columns: 280px 1fr; display: grid; gap: 2rem; padding: 2rem; }
             .list-img-box { height: 100%; }
             .btn { width: auto; }
             .compact-past-item { flex-direction: row; align-items: center; padding: 1rem 0.5rem; }
@@ -205,11 +204,10 @@
         }
     </style>
 </head>
-<body class="theme-halle">
+<body>
 
-    <!-- TICKER MIT ENDLOS-SCROLL-ELEMENT -->
     <div class="countdown-ticker" id="live-ticker-bar">
-        <div class="ticker-wrap" id="live-ticker">Lade Zeit-Daten...</div>
+        <div class="ticker-wrap" id="live-ticker">Lade aktuellen Status...</div>
     </div>
 
     <nav class="navbar">
@@ -217,7 +215,6 @@
     </nav>
 
     <div class="container">
-        <!-- DYNAMISCHER SPORTARTSWITCH -->
         <div class="toggle-container">
             <div class="sport-toggle" id="sportToggle">
                 <div class="toggle-slider"></div>
@@ -226,10 +223,9 @@
             </div>
         </div>
 
-        <!-- TURNIER BEREICH -->
         <div id="turniere" style="scroll-margin-top: 140px;">
             <h1 class="section-headline" id="main-turniere-headline">TRAIN. PLAY. <span>GROW.</span></h1>
-            <p class="section-intro-text">Erlebe die packendsten Volleyball-Events der Region. Melde dein Team an oder verfolge die Spiele live vor Ort.</p>
+            <p class="section-intro-text">Erlebe die spannendsten Volleyball-Events der Region. Melde dein Team direkt an oder komm zum Anfeuern vorbei.</p>
 
             <div class="archive-section-title" id="title-sec-heute" style="color:#ef4444; display:none;">🔴 JETZT LIVE IM BETRIEB</div>
             <div class="tournament-list-grid" id="grid-sec-heute"></div>
@@ -237,40 +233,35 @@
             <div class="archive-section-title" id="title-sec-zukunft" style="color:var(--accent-primary); display:none;">⏳ NÄCHSTE TERMINE</div>
             <div class="tournament-list-grid" id="grid-sec-zukunft"></div>
 
-            <!-- TERMIN IN VORBEREITUNG BANNER -->
             <div class="unknown-banner" id="unknown-date-banner" style="display: none;">
                 <h3 id="unknown-banner-title">Termin in Vorbereitung</h3>
-                <p id="unknown-banner-text">Text...</p>
+                <p id="unknown-banner-text">Informationen folgen.</p>
             </div>
 
-            <!-- KOMPAKTES VERGANGENES ARCHIV -->
             <div class="highlight-block" id="compact-past-section" style="margin-top: 3rem;">
                 <h2 id="past-archive-title">✅ Vergangene Highlights</h2>
                 <div id="compact-past-grid"></div>
             </div>
         </div>
 
-        <!-- DETAILS ZUR SPIELART -->
         <div style="margin: 4rem 0 2rem 0;">
             <h2 class="section-headline" id="cat-detail-title">Details zur Spielart</h2>
             <p class="section-intro-text" id="cat-detail-text" style="margin-bottom: 0;"></p>
         </div>
 
-        <!-- VISION & WERTE -->
         <div style="margin: 4rem 0 2rem 0;">
-            <h2 class="section-headline" id="vision-title">Unsere Vision & Werte</h2>
-            <p class="section-intro-text" id="vision-intro">Vision...</p>
+            <h2 class="section-headline" id="vision-title">Unsere Vision</h2>
+            <p class="section-intro-text" id="vision-intro"></p>
             <div class="values-grid" id="values-container"></div>
         </div>
 
-        <!-- ANMELDUNG -->
         <div class="highlight-block" id="anmeldung" style="scroll-margin-top: 140px; margin-top: 5rem;">
             <h2 id="reg-card-title">Turnieranmeldung</h2>
             <div class="registration-grid">
                 <div>
                     <div class="badge-info" id="audit-warning-box"></div>
-                    <p id="reg-left-text" style="color: var(--text-on-block);">Text...</p>
-                    <p id="reg-footer-text" style="margin-top: 1.5rem; font-style: italic; color: var(--text-on-block); opacity: 0.7;">Text...</p>
+                    <p id="reg-left-text"></p>
+                    <p id="reg-footer-text" style="margin-top: 1.5rem; font-style: italic; opacity: 0.7;"></p>
                 </div>
                 <div>
                     <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)">
@@ -286,13 +277,11 @@
             </div>
         </div>
 
-        <!-- ÜBER UNS -->
-        <div style="margin: 5rem 0;" id="ueber-uns" style="scroll-margin-top: 140px;">
+        <div style="margin: 5rem 0;" id="ueber-uns">
             <h2 class="section-headline" id="about-title">Über uns</h2>
             <p class="section-intro-text" id="about-text" style="max-width: 850px;"></p>
         </div>
 
-        <!-- KONTAKT -->
         <div class="highlight-block" id="kontakt" style="scroll-margin-top: 140px; text-align: center;">
             <h2 id="contact-title" style="border: none; padding: 0;">Kontakt</h2>
             <p id="contact-info-text" style="margin-bottom: 1.5rem;"></p>
@@ -324,7 +313,7 @@
             const btn = document.getElementById('btn-collapse-' + id);
             if(el.style.display === 'block') {
                 el.style.display = 'none';
-                btn.innerText = 'ℹ️ Mehr Informationen anzeigen';
+                btn.innerText = 'ℹ️ Details & Infos anzeigen';
             } else {
                 el.style.display = 'block';
                 btn.innerText = '🔼 Details einklappen';
@@ -334,7 +323,6 @@
         function openSecurePhotoLink(eventId) {
             const eventObj = TOURNAMENT_EVENTS.find(e => e.id === eventId);
             if(!eventObj) return;
-
             const input = prompt(WEBSITE_CONTENT.gallery.promptText);
             if (input === eventObj.albumPassword) {
                 window.open(eventObj.googleFotosUrl, '_blank');
@@ -345,8 +333,47 @@
 
         function updateTickerText(newText) {
             const ticker = document.getElementById('live-ticker');
-            // Verdoppelung des Texts sorgt für eine lückenlose Anzeige während des Umlaufs
-            ticker.innerText = `${newText}               +++               ${newText}               +++               `;
+            ticker.innerText = `${newText}          ++++          ${newText}          ++++          `;
+        }
+
+        function buildAdditionalContentHTML(event) {
+            let html = '<div style="display:flex; flex-direction:column; gap:1.2rem; font-size:0.95rem; line-height:1.6; text-align:left;">';
+            let contentsFound = false;
+
+            if (event.details && Array.isArray(event.details)) {
+                event.details.forEach(item => {
+                    if (item.title && item.title.trim() !== "" && item.text && item.text.trim() !== "") {
+                        html += `<div>`;
+                        html += `<strong style="color:var(--accent-primary); font-size:1rem;">${item.title}:</strong><br>${item.text}`;
+                        
+                        if (item.image && item.image.trim() !== "") {
+                            html += `<br><img src="${item.image}" alt="${item.title}" style="width: 100%; max-width: 480px; border-radius: 8px; margin-top: 0.6rem; border: 1px solid rgba(255,255,255,0.15); display: block;">`;
+                        }
+                        
+                        html += `</div>`;
+                        contentsFound = true;
+                    }
+                });
+            }
+
+            if ((event.mapsUrl && event.mapsUrl.trim() !== "") || (event.turnierplanUrl && event.turnierplanUrl.trim() !== "")) {
+                html += `<div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:0.4rem;">`;
+                if (event.mapsUrl && event.mapsUrl.trim() !== "") {
+                    html += `<a href="${event.mapsUrl}" target="_blank" class="btn" style="margin-top:0; padding:0.5rem 1.2rem; font-size:0.8rem; width:auto; background:var(--accent-secondary); color:#fff;">📍 Google Maps Standort</a>`;
+                }
+                if (event.turnierplanUrl && event.turnierplanUrl.trim() !== "") {
+                    html += `<a href="${event.turnierplanUrl}" target="_blank" class="btn" style="margin-top:0; padding:0.5rem 1.2rem; font-size:0.8rem; width:auto; background:#22c55e; color:#fff;">🏆 Online Turnierplan</a>`;
+                }
+                html += `</div>`;
+                contentsFound = true;
+            }
+
+            if (!contentsFound) {
+                html += `<p style="opacity:0.6; font-style:italic;">Keine weiteren Zusatzdetails für dieses Event hinterlegt.</p>`;
+            }
+
+            html += '</div>';
+            return html;
         }
 
         function renderSportContent(type) {
@@ -394,16 +421,16 @@
                     <div class="list-img-box" style="background-image: url('${event.coverImage || ''}')"></div>
                     <div>
                         <h3 style="color: #ef4444;">${event.title}</h3>
-                        <div style="font-size:0.95rem; color:var(--text-on-bg); font-weight:700; margin-bottom:0.8rem;">
+                        <div style="font-size:0.95rem; font-weight:700; margin-bottom:0.8rem;">
                             ${formatGermanDate(tDate)} <br>📍 ${event.ort}
                         </div>
-                        <p style="color: var(--text-on-bg); opacity: 0.9;">${event.description}</p>
-                        <div style="margin-top:1rem;">
-                            <button id="btn-collapse-${event.id}" onclick="toggleAccordion('${event.id}')" class="btn btn-toggle-details">ℹ️ Mehr Informationen anzeigen</button>
+                        <p style="opacity: 0.9;">${event.description}</p>
+                        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;">
+                            <button id="btn-collapse-${event.id}" onclick="toggleAccordion('${event.id}')" class="btn btn-toggle-details" style="width:auto;">ℹ️ Details & Infos</button>
                             ${photoButtonHtml}
                         </div>
                         <div class="accordion-content" id="details-${event.id}">
-                            ${event.additionalContentHTML || '<p>Keine weiteren Details hinterlegt.</p>'}
+                            ${buildAdditionalContentHTML(event)}
                         </div>
                     </div>
                 `;
@@ -424,13 +451,13 @@
                         <div style="font-size:0.95rem; color:var(--accent-primary); font-weight:700; margin-bottom:0.8rem;">
                             ${formatGermanDate(tDate)} <br>📍 ${event.ort}
                         </div>
-                        <p style="color: var(--text-on-bg); opacity: 0.85;">${event.description}</p>
-                        <div style="margin-top:1rem;">
-                            <button id="btn-collapse-${event.id}" onclick="toggleAccordion('${event.id}')" class="btn btn-toggle-details">ℹ️ Mehr Informationen anzeigen</button>
-                            <a href="#anmeldung" class="btn">Jetzt Anmelden</a>
+                        <p style="opacity: 0.85;">${event.description}</p>
+                        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;">
+                            <button id="btn-collapse-${event.id}" onclick="toggleAccordion('${event.id}')" class="btn btn-toggle-details" style="width:auto;">ℹ️ Details & Infos</button>
+                            <a href="#anmeldung" class="btn" style="width:auto;">Jetzt Anmelden</a>
                         </div>
                         <div class="accordion-content" id="details-${event.id}">
-                            ${event.additionalContentHTML || '<p>Keine weiteren Details hinterlegt.</p>'}
+                            ${buildAdditionalContentHTML(event)}
                         </div>
                     </div>
                 `;
@@ -480,7 +507,6 @@
                 }
             }
 
-            /* Spielart-Details setzen */
             const detailKey = type === 'halle' ? 'halle' : 'beach';
             if (WEBSITE_CONTENT.tournamentDetails && WEBSITE_CONTENT.tournamentDetails[detailKey]) {
                 document.getElementById('cat-detail-title').innerText = WEBSITE_CONTENT.tournamentDetails[detailKey].title;
@@ -513,6 +539,7 @@
             countdownInterval = setInterval(calculate, 1000);
         }
 
+        // --- HIER WERDEN JETZT DIE HINTERGRÜNDE DYNAMISCH AUS DER CONTENT.JS GEHOLT ---
         function switchSport(type) {
             if(WEBSITE_CONTENT) WEBSITE_CONTENT.currentActiveSport = type;
             const toggle = document.getElementById('sportToggle');
@@ -544,12 +571,15 @@
             defaultOpt.disabled = true; 
             defaultOpt.selected = true;
             select.appendChild(defaultOpt);
-            REGISTERED_COMMUNITIES.forEach(comm => {
-                const opt = document.createElement('option'); 
-                opt.value = comm; 
-                opt.text = comm; 
-                select.appendChild(opt);
-            });
+            
+            if (typeof REGISTERED_COMMUNITIES !== 'undefined') {
+                REGISTERED_COMMUNITIES.forEach(comm => {
+                    const opt = document.createElement('option'); 
+                    opt.value = comm; 
+                    opt.text = comm; 
+                    select.appendChild(opt);
+                });
+            }
             const newOpt = document.createElement('option'); 
             newOpt.value = "NEW"; 
             newOpt.text = WEBSITE_CONTENT.registration.placeholders.gemeindeSelectNewOption;
@@ -583,18 +613,18 @@
         }
 
         function renderStaticTexts() {
-            const title = WEBSITE_CONTENT.headerTitle || "Volleyball Turniere - FBG Erlangen";
+            const title = WEBSITE_CONTENT.headerTitle || "Volleyball Turniere - FBG";
             const parts = title.includes(' - ') ? title.split(' - ') : [title, "FBG"];
             document.getElementById('nav-title').innerHTML = `${parts[0]} - <span>${parts[1]}</span>`;
             
             document.getElementById('btn-toggle-halle').innerText = WEBSITE_CONTENT.labels.halleShort;
             document.getElementById('btn-toggle-beach').innerText = WEBSITE_CONTENT.labels.beachShort;
+            
             document.getElementById('vision-title').innerText = WEBSITE_CONTENT.vision.title;
             document.getElementById('vision-intro').innerText = WEBSITE_CONTENT.vision.intro;
-            
             let visionHtml = '';
             WEBSITE_CONTENT.vision.items.forEach(item => {
-                visionHtml += `<div class="value-box"><span class="value-number">${item.num}</span><h3>${item.title}</h3><p>${item.text}</p></div>`;
+                visionHtml += `<div class="value-box"><span class="value-number">${item.num}</span><h3>${item.title}</h3><p style="margin-top: 0.5rem;">${item.text}</p></div>`;
             });
             document.getElementById('values-container').innerHTML = visionHtml;
 
@@ -603,17 +633,24 @@
             document.getElementById('reg-left-text').innerText = WEBSITE_CONTENT.registration.leftText;
             document.getElementById('reg-footer-text').innerText = WEBSITE_CONTENT.registration.footerText;
             document.getElementById('reg-submit-btn').innerText = WEBSITE_CONTENT.registration.submitBtnText;
+            
+            document.getElementById('lbl-reg-gemeinde').innerText = WEBSITE_CONTENT.registration.labels.gemeinde;
+            document.getElementById('lbl-reg-new-gemeinde').innerText = WEBSITE_CONTENT.registration.labels.newGemeinde;
+            document.getElementById('lbl-reg-teamname').innerText = WEBSITE_CONTENT.registration.labels.teamname;
+            document.getElementById('lbl-reg-leiter').innerText = WEBSITE_CONTENT.registration.labels.leiter;
+            document.getElementById('lbl-reg-email').innerText = WEBSITE_CONTENT.registration.labels.email;
+            document.getElementById('lbl-reg-telefon').innerText = WEBSITE_CONTENT.registration.labels.telefon;
+
             document.getElementById('about-title').innerText = WEBSITE_CONTENT.aboutUs.title;
             document.getElementById('about-text').innerText = WEBSITE_CONTENT.aboutUs.text;
             
-            // Mail-Button Funktionalität fixen:
             document.getElementById('contact-title').innerText = WEBSITE_CONTENT.contact.title;
             document.getElementById('contact-info-text').innerText = WEBSITE_CONTENT.contact.info;
             document.getElementById('contact-btn').innerText = WEBSITE_CONTENT.contact.btnText;
             
-            const receiver = WEBSITE_CONTENT.contact.receiverEmail || "info@example.com";
-            const subject = WEBSITE_CONTENT.contact.mailSubject || "Kontaktanfrage";
-            document.getElementById('contact-btn').setAttribute('href', `mailto:${receiver}?subject=${encodeURIComponent(subject)}`);
+            const rec = WEBSITE_CONTENT.contact.receiverEmail || "info@example.com";
+            const sub = WEBSITE_CONTENT.contact.mailSubject || "Anfrage";
+            document.getElementById('contact-btn').setAttribute('href', `mailto:${rec}?subject=${encodeURIComponent(sub)}`);
         }
 
         window.onload = function() {
