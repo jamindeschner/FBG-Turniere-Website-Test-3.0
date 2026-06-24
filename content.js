@@ -1,7 +1,11 @@
+/* =========================================================================
+   === WEBSITE INHALTE & TEXTE ===
+   Hier kannst du alle Texte der Website anpassen, ohne den Code zu verändern.
+   ========================================================================= */
+
 const WEBSITE_CONTENT = {
     currentActiveSport: "halle", // Standard beim Laden der Seite ("halle" oder "beach")
-    headerTitle: "Volleyball Turniere - FBG",
-    heroRegisterBtnText: "Zur Turnieranmeldung",
+    headerTitle: "Volleyball Turniere - FBG Erlangen",
     emailReceiverDummy: "anmeldung@fbg-volleyball.de",
 
     navigation: {
@@ -29,21 +33,6 @@ const WEBSITE_CONTENT = {
         text: "Wir planen bereits fleißig das nächste Event für euch. Sobald das Datum und die Location feststehen, kannst du dich hier wie gewohnt anmelden!"
     },
 
-    pastTournament: {
-        titlePrefix: "Rückblick: ",
-        description: "Unser letztes Turnier war ein voller Erfolg! Alle Platzierungen, Eindrücke und den Link zur passwortgeschützten Bildergalerie findest du in unserer Gesamtübersicht."
-    },
-
-    vision: {
-        title: "Unsere Vision & Werte",
-        intro: "Gemeinsam Sport treiben, Gemeinschaft erleben und fairen Volleyball spielen – das macht die Turniere des FBG aus.",
-        items: [
-            { num: "01", title: "Faires Miteinander", text: "Egal ob Profi oder Hobbyspieler – bei uns steht der respektvolle Umgang auf und neben dem Feld an erster Stelle." },
-            { num: "02", title: "Gemeinschaft", text: "Wir vernetzen Volleyballbegeisterte aus verschiedenen Regionen und schaffen Raum für neue Freundschaften." },
-            { num: "03", title: "Leidenschaft", text: "Mit Herzblut organisieren wir unvergessliche Turniertage, die lange im Gedächtnis bleiben." }
-        ]
-    },
-
     registration: {
         title: "Turnieranmeldung",
         auditWarningBox: "⚠️ <strong>Achtung:</strong> Da deine Gemeinde zum ersten Mal teilnimmt, wird die Anmeldung vorab manuell durch das FBG-Präsidium geprüft.",
@@ -63,6 +52,16 @@ const WEBSITE_CONTENT = {
         body: "Hallo FBG-Turnierleitung,\n\nhiermit melde ich mein Team verbindlich an:\n\n- Turnierart: [TURNIER]\n- Teamname: [TEAM]\n- Gemeinde: [GEMEINDE]\n- Status: [STATUS]\n\nKontaktpersonen-Details:\n- Name des Leiters: [LEITER]\n- E-Mail: [EMAIL]\n- Telefon: [TELEFON]\n\nBitte sendet mir die Bestätigung und die Kontodaten für die Startgebühr zu.\n\nViele Grüße\n[LEITER]"
     },
 
+    vision: {
+        title: "Unsere Vision & Werte",
+        intro: "Gemeinsam Sport treiben, Gemeinschaft erleben und fairen Volleyball spielen – das macht die Turniere des FBG aus.",
+        items: [
+            { num: "01", title: "Faires Miteinander", text: "Egal ob Profi oder Hobbyspieler – bei uns steht der respektvolle Umgang auf und neben dem Feld an erster Stelle." },
+            { num: "02", title: "Gemeinschaft", text: "Wir vernetzen Volleyballbegeisterte aus verschiedenen Regionen und schaffen Raum für neue Freundschaften." },
+            { num: "03", title: "Leidenschaft", text: "Mit Herzblut organisieren wir unvergessliche Turniertage, die lange im Gedächtnis bleiben." }
+        ]
+    },
+
     aboutUs: {
         title: "Über uns",
         text: "Das Freizeitsport-Bündnis Gemeinschaft (FBG) veranstaltet seit vielen Jahren leidenschaftlich Volleyball-Turniere im Hallen- und Beachbereich. Unser Ziel ist es, Menschen durch den Sport zusammenzubringen und packende, aber stets faire Wettkämpfe zu bieten. Ein eingespieltes Team aus ehrenamtlichen Helfern sorgt bei jedem Event für einen reibungslosen Ablauf, gute Verpflegung und beste Stimmung."
@@ -75,13 +74,22 @@ const WEBSITE_CONTENT = {
     },
 
     gallery: {
-        navTitle: "🏆 FBG - <span>Turnier-Archiv</span>",
-        navBack: "← Zurück zur Startseite",
-        title: "Alle Turniere & Highlights",
-        description: "Hier findest du eine Übersicht über alle aktuellen, kommenden und vergangenen Turniere inklusive Detail-Informationen und passwortgeschützten Fotogalerien.",
         btnExternalText: "📸 Fotos ansehen",
         btnExternalComingSoon: "⏳ Galerie bald verfügbar",
         promptText: "🔒 Dieses Album ist geschützt.\nBitte gib das turnierspezifische Passwort ein:",
         errorText: "❌ Falsches Passwort. Der Zugriff auf das Google Fotos Album wurde verweigert."
+    },
+
+    /* Turnier-Details (Spielart-Beschreibungen) */
+    tournamentDetails: {
+        halle: {
+            title: "Details zum Hallenturnier",
+            text: "Gespielt wird nach den offiziellen Mixed-Regeln (mind. 2 Frauen auf dem Feld)."
+        },
+        beach: {
+            title: "Beach-Regeln",
+            text: "2 gegen 2, barfuß im Sand. Bei Regen wird trotzdem gespielt!"
+        }
     }
 };
+

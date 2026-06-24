@@ -1,6 +1,7 @@
 /* =========================================================================
-   === GEMEINDE- UND NETZWERK-DATENBANK ===
-   Hier werden ausschließlich die bekannten und freigeschalteten Gemeinden gepflegt.
+   === GEMEINDE- UND TEAM-DATENBANK ===
+   Hier werden alle Gemeinden eingetragen, die sich ohne zusätzliche 
+   Prüfung anmelden dürfen.
    ========================================================================= */
 
 const REGISTERED_COMMUNITIES = [
