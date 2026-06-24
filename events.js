@@ -46,26 +46,96 @@ const TOURNAMENT_EVENTS = [
         googleFotosUrl: "https://photos.google.com", 
         albumPassword: "fbg"
     },
-    {
-        id: "beach-2026-01",
+   {
+        id: "beach-2027",
         sport: "beach",
-        title: "Sommer Beach Opening",
-        datum: "2026-07-10T10:00:00",
-        ort: "Beach-Anlage Erlangen",
-        coverImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600",
-        description: "Wir eröffnen die Beach-Saison im Sand!",
+        title: "Beachvolleyball-Turnier 2027",
+        datum: "2026-06-24T10:00:00", 
+        ort: "TS Herzogenaurach",
+        coverImage: "bilder/Beach-Turnier-2027.png",
+        description: "Unser Sommer-Turnier auf der schönen Anlage des TS Herzogenaurach. Wir freuen uns auf Sonne, Spaß und Gemeinschaft.",
         
-        // Hier als Gegenbeispiel: Nur Text, überhaupt keine Zusatzbilder verwendet
+        // --- FLEXIBLE DETAILS (Jeder Block kann Text UND optional ein eigenes Bild haben!) ---
         details: [
             { 
-                title: "👟 Kleidung & Sonnenschutz", 
-                text: "Denkt an Sonnencreme und ggf. Beach-Socken, falls der Sand in der Mittagssonne zu heiß wird!" 
+                title: "🍎 Verpflegung & Essen", 
+                text: "Es gibt einen Foodtruck vor Ort. Bitte kein Mittagessen selbst mitbringen, nach Absprache mit dem Foodtruck-Anbieter.\nAllerdings freuen wir uns über Kuchen / Snacks / Fingerfood für den Nachmittag.",
+                image: "" // Bild für die Verpflegung
+            },
+	    { 
+                title: "", 
+                text: "",
+                image: "" // Bild für die Verpflegung
+            },
+
+            { 
+                title: "💰 Startgebühr", 
+                text: "5€ pro Spieler, Zuschauer kostenlos.",
+                image: "" // Kein Bild für diesen Bereich
+            },
+            { 
+                title: "Parken", 
+                text: "Parkplätze sind ausreichend auf dem markierten Ort verfügbar.",
+                image: "bilder/Parkplatz-Herzogenaurach.png" // Bild für den Turnierplan / Lageplan
             }
+
         ],
+
         
-        mapsUrl: "",
-        turnierplanUrl: "",
-        googleFotosUrl: "",
-        albumPassword: ""
-    }
+        // --- EXTERNE LINKS (Einfach Link eintragen oder "" leer lassen) ---
+        mapsUrl: "https://maps.app.goo.gl/PtVu3RWGQisEudbu9", 
+        turnierplanUrl: "https://www.meinturnierplan.de", 
+
+        // --- FOTO GALERIE (Nach dem Turnier) ---
+        googleFotosUrl: "https://photos.google.com", 
+        albumPassword: "fbg"
+    },
+
+ {
+        id: "beach-2025",
+        sport: "beach",
+        title: "Beachvolleyball-Turnier 2025",
+        datum: "2025-06-24T10:00:00", 
+        ort: "TS Herzogenaurach",
+        coverImage: "bilder/Beach-Turnier-2027.png",
+        description: "Unser Sommer-Turnier auf der schönen Anlage des TS Herzogenaurach. Wir freuen uns auf Sonne, Spaß und Gemeinschaft.",
+        
+        // --- FLEXIBLE DETAILS (Jeder Block kann Text UND optional ein eigenes Bild haben!) ---
+        details: [
+            { 
+                title: "🍎 Verpflegung & Essen", 
+                text: "Es gibt einen Foodtruck vor Ort. Bitte kein Mittagessen selbst mitbringen, nach Absprache mit dem Foodtruck-Anbieter.\nAllerdings freuen wir uns über Kuchen / Snacks / Fingerfood für den Nachmittag.",
+                image: "" // Bild für die Verpflegung
+            },
+	    { 
+                title: "", 
+                text: "",
+                image: "" // Bild für die Verpflegung
+            },
+
+            { 
+                title: "💰 Startgebühr", 
+                text: "5€ pro Spieler, Zuschauer kostenlos.",
+                image: "" // Kein Bild für diesen Bereich
+            },
+            { 
+                title: "Parken", 
+                text: "Parkplätze sind ausreichend auf dem markierten Ort verfügbar.",
+                image: "bilder/Parkplatz-Herzogenaurach.png" // Bild für den Turnierplan / Lageplan
+            }
+
+        ],
+
+        
+        // --- EXTERNE LINKS (Einfach Link eintragen oder "" leer lassen) ---
+        mapsUrl: "https://maps.app.goo.gl/PtVu3RWGQisEudbu9", 
+        turnierplanUrl: "https://www.meinturnierplan.de", 
+
+        // --- FOTO GALERIE (Nach dem Turnier) ---
+        googleFotosUrl: "https://photos.google.com", 
+        albumPassword: "fbg"
+    },
+
+
+
 ];

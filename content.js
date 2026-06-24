@@ -4,13 +4,13 @@
    ========================================================================= */
 
 const WEBSITE_CONTENT = {
-    currentActiveSport: "halle", // Standard beim Laden der Seite ("halle" oder "beach")
+    currentActiveSport: "beach", // Standard beim Laden der Seite ("halle" oder "beach")
     headerTitle: "Volleyball Turniere - FBG Erlangen",
     emailReceiverDummy: "anmeldung@fbg-volleyball.de",
 
     // --- HINTERGRUNDBILDER (Hier einfach deine Wunsch-Links eintragen) ---
-    bgImageHalle: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=1600", // Hintergrund für Halle
-    bgImageBeach: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=1600", // Hintergrund für Beach
+    bgImageHalle: "bilder/Background-Halle-general.png", // Hintergrund für Halle
+    bgImageBeach: "bilder/Background-Beach-general.png", // Hintergrund für Beach
 
     // --- SPORTARTEN-SCHALTER ---
     labels: {
@@ -20,7 +20,7 @@ const WEBSITE_CONTENT = {
 
     // --- LIVE-TICKER (OBEN) ---
     ticker: {
-        countdownPrefix: "⏳ Countdown zum nächsten [SPORT]: ",
+        countdownPrefix: "⏳ Nächstes [SPORT]: ",
         runningNow: "🔥 Das [SPORT] läuft JETZT live! Komm vorbei!",
         archiveMode: "✅ Das letzte [SPORT] ist beendet. Ergebnisse im Turnier-Archiv!",
         noEvent: "📅 Aktuell ist kein [SPORT] geplant. Schau bald wieder vorbei!"
@@ -35,32 +35,33 @@ const WEBSITE_CONTENT = {
     // --- SEKTION: DETAILS ZUR SPIELART (UNTER DER TURNIERLISTE) ---
     tournamentDetails: {
         halle: {
-            title: "Details zum Hallenturnier",
+            title: "Regeln und Spielablauf",
             text: "Gespielt wird nach den offiziellen Mixed-Regeln (mind. 2 Frauen auf dem Feld). Die Netzhöhe beträgt standardmäßig 2,35m."
         },
         beach: {
-            title: "Beach-Regeln & Sand-Infos",
-            text: "Klassisches Beach-Volleyball im Sand. Barfuß oder mit Beach-Socken. Fairplay steht an oberster Stelle!"
+            title: "Regeln und Spielablauf",
+            text: "- 6 Spieler pro Team, darunter mind. 2 Frauen und mind. 1 Frau immer auf dem Feld \n- Gruppenspiele auf Punkte bis 25 (max. 15min) \n- keine Beach-Technikregeln \n- Netzberührung ist ein Fehler \n- Übertreten unter dem Netz ist nur ein Fehler, wenn ein Gegner dadurch behindert oder gefährdet wird"
         }
     },
 
     // --- SEKTION: UNSERE VISION & WERTE (BELIEBIG ERWEITERBAR) ---
     vision: {
-        title: "Unsere Vision",
-        intro: "Sport verbindet Menschen. Bei unseren Turnieren steht das gemeinsame Erlebnis und der Spaß am Volleyball im Vordergrund.",
+        title: "Unser Fokus",
+        intro: "Bei unseren Turnieren steht der Herr JESUS CHRISTUS immer im Mittelpunkt. Das soll auch im Umgang miteinander bemerkbar sein.",
         items: [
-            { num: "01", title: "Gemeinschaft", text: "Wir wollen eine Plattform bieten, auf der Teams aus verschiedenen Regionen zusammenkommen und Freundschaften pflegen." },
-            { num: "02", title: "Fairplay", text: "Ehrgeiz ist gut, aber Respekt dem Gegner und den Schiedsrichtern gegenüber ist uns absolut am wichtigsten." },
-            { num: "03", title: "Wachstum", text: "Egal ob Anfänger-Team oder eingespielte Vereinsmannschaft – bei uns kann jedes Team lernen und über sich hinauswachsen." }
+            { num: "01", title: "Fairplay", text: "Ehrgeiz ist gut, aber ein liebevoller Umgang dem Gegner und den Schiedsrichtern gegenüber ist Voraussetzung. Wir alle sind Menschen und machen Fehler." },
+            { num: "02", title: "Spaß", text: "Es ist ein Hobby-Turnier. Die gemeinsame Freude am Spiel steht an erster Stelle, nicht Siege oder Pokale. " },
+            { num: "03", title: "Botschaft", text: "Zu jedem Turnier gehört ein kurzer Input aus dem Wort Gottes - der Bibel." }
         ]
     },
 
     // --- SEKTION: ANMELDUNGS-BLOCK ---
     registration: {
         title: "Turnieranmeldung",
+	deadlineWeeksBefore: 2, // <--- Bestimmt die Anzahl an Wochen vor einem Turnier, bis wann die Anmeldung noch möglich ist
         auditWarningBox: "⚠️ <strong>Hinweis zur Prüfung:</strong> Da deine Gemeinde noch nicht in unserer Datenbank registriert ist, wird deine Anmeldung von der Turnierleitung manuell geprüft. Du erhältst im Anschluss eine Bestätigung.",
         leftText: "Fülle das Formular vollständig aus. Nach dem Absenden öffnet sich dein E-Mail-Programm mit einer vorgefertigten Nachricht. Schicke diese einfach ab, um dein Team anzumelden.",
-        footerText: "Die Plätze sind pro Turnier limitiert. Es gilt das Prinzip: Wer zuerst kommt, mahlt zuerst!",
+        footerText: "Ihr möchtet mehrere Teams anmelden? \nSendet das Formular einfach mehrfach ab und vermerkt dies im ''Sonstiges''-Feld. Bitte beachtet, dass die Anmeldung erst mit Erhalt unserer Bestätigungsmail verbindlich ist.",
         submitBtnText: "Anmeldung via E-Mail absenden",
         labels: {
             gemeinde: "Wähle deine Gemeinde / Verein",
@@ -79,7 +80,7 @@ const WEBSITE_CONTENT = {
     // --- SEKTION: ÜBER UNS ---
     aboutUs: {
         title: "Über uns",
-        text: "Das Freizeitsport-Bündnis Gemeinschaft (FBG) veranstaltet seit vielen Jahren leidenschaftlich Volleyball-Turniere im Hallen- und Beachbereich. Unser Ziel ist es, Menschen durch den Sport zusammenzubringen und packende, aber stets faire Wettkämpfe zu bieten. Ein eingespieltes Team aus ehrenamtlichen Helfern sorgt bei jedem Event für einen reibungslosen Ablauf, gute Verpflegung und beste Stimmung."
+        text: "Text über das Organisations-Team."
     },
 
     // --- SEKTION: KONTAKT ---
