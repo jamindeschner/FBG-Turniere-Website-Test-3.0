@@ -36,7 +36,7 @@ const TOURNAMENT_EVENTS = [
         id: "heute-live-2026",
         sport: "beach",
         title: "🔥 FBG Mittsommer Beach-Live 2026",
-        datum: "2026-06-23T09:00:00", 
+        datum: "2026-06-24T09:00:00", 
         ort: "Beach-Arena am See, Feld 1-4",
         coverImage: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=600",
         description: "Das Turnier findet GENAU JETZT statt! Komm vorbei zum Anfeuern oder verfolge die Infos live.",
