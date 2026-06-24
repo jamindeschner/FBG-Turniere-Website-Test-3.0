@@ -156,16 +156,16 @@
         
         .badge-info { background: #ea580c; color: white; padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; display: inline-block; line-height: 1.4; }
         .deadline-info { 
-    background: rgba(14, 165, 233, 0.15); 
-    border: 1px solid var(--accent-primary); 
-    color: #fff; 
-    padding: 0.8rem; 
-    border-radius: 8px; 
-    font-size: 0.9rem; 
-    margin-bottom: 1.5rem; 
-    display: block; /* Normaler Block-Kasten, kein Flexbox */
-    line-height: 1.5; /* Schöner Zeilenabstand für Fließtext */
-}
+            background: rgba(14, 165, 233, 0.15); 
+            border: 1px solid var(--accent-primary); 
+            color: #fff; 
+            padding: 0.8rem; 
+            border-radius: 8px; 
+            font-size: 0.9rem; 
+            margin-bottom: 1.5rem; 
+            display: block; 
+            line-height: 1.5; 
+        }
 
         /* --- TURNIERLISTE --- */
         .archive-section-title { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; margin: 3rem 0 1.5rem 0; color: var(--text-on-bg); letter-spacing: -0.5px; }
@@ -278,7 +278,7 @@
                 <div>
                     <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)">
                         <div class="badge-info" id="audit-warning-box"></div>
-			<div class="form-group"><label id="lbl-reg-turnier">Gewünschtes Turnier</label><select class="form-control" id="reg-turnier-select" required></select></div>
+                        <div class="form-group"><label id="lbl-reg-turnier">Gewünschtes Turnier</label><select class="form-control" id="reg-turnier-select" required></select></div>
                         <div class="form-group"><label id="lbl-reg-gemeinde">Gemeinde</label><select class="form-control" id="reg-gemeinde-select" onchange="checkCommunityStatus()" required></select></div>
                         <div class="form-group" id="new-community-group" style="display: none;"><label id="lbl-reg-new-gemeinde">Neue Gemeinde</label><input type="text" class="form-control" id="reg-new-gemeinde-name"></div>
                         <div class="form-group"><label id="lbl-reg-teamname">Teamname</label><input type="text" class="form-control" id="reg-teamname" required></div>
@@ -287,6 +287,23 @@
                         <div class="form-group"><label id="lbl-reg-telefon">Telefon</label><input type="tel" class="form-control" id="reg-telefon" required></div>
                         <div class="form-group"><label id="lbl-reg-sonstiges">Sonstiges (Notizen & Mitteilungen)</label><textarea class="form-control" id="reg-sonstiges" rows="3" style="resize: vertical; font-family: inherit;"></textarea></div>
                         <button type="submit" id="reg-submit-btn" class="btn" style="width: 100%;">Anmeldung absenden</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-block" id="newsletter-block" style="margin-top: 3rem;">
+            <h2 id="news-card-title">Newsletter</h2>
+            <div class="registration-grid">
+                <div>
+                    <p id="news-text"></p>
+                </div>
+                <div>
+                    <form id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="news-email" placeholder="" required>
+                        </div>
+                        <button type="submit" id="news-submit-btn" class="btn" style="width: 100%;">Anmelden</button>
                     </form>
                 </div>
             </div>
@@ -301,6 +318,12 @@
             <h2 id="contact-title" style="border: none; padding: 0;">Kontakt</h2>
             <p id="contact-info-text" style="margin-bottom: 1.5rem;"></p>
             <a href="#" id="contact-btn" class="btn" style="width: auto;">Mail schreiben</a>
+        </div>
+
+        <div class="highlight-block" id="impressum-block" style="margin-top: 5rem; font-size: 0.9rem; opacity: 0.85;">
+            <h2 id="impressum-title">Impressum</h2>
+            <p><strong id="impressum-angaben"></strong></p>
+            <p id="impressum-text" style="margin-top: 1rem; white-space: pre-line;"></p>
         </div>
     </div>
 
@@ -392,51 +415,45 @@
         }
 
         function buildTournamentDropdown() {
-    const select = document.getElementById('reg-turnier-select');
-    select.innerHTML = '';
-    
-    const defaultOpt = document.createElement('option');
-    defaultOpt.value = "";
-    defaultOpt.text = "-- Bitte Turnier auswählen --";
-    defaultOpt.disabled = true;
-    defaultOpt.selected = true;
-    select.appendChild(defaultOpt);
+            const select = document.getElementById('reg-turnier-select');
+            select.innerHTML = '';
+            
+            const defaultOpt = document.createElement('option');
+            defaultOpt.value = "";
+            defaultOpt.text = "-- Bitte Turnier auswählen --";
+            defaultOpt.disabled = true;
+            defaultOpt.selected = true;
+            select.appendChild(defaultOpt);
 
-    const heuteDatum = new Date();
-    const allEvents = (typeof TOURNAMENT_EVENTS !== 'undefined') ? TOURNAMENT_EVENTS : [];
-    
-    // Frist aus der content.js auslesen (Standard: 2 Wochen)
-    const deadlineWeeks = (WEBSITE_CONTENT.registration && WEBSITE_CONTENT.registration.deadlineWeeksBefore) ? WEBSITE_CONTENT.registration.deadlineWeeksBefore : 2;
-    const msDeadlineBuffer = deadlineWeeks * 7 * 24 * 60 * 60 * 1000;
+            const heuteDatum = new Date();
+            const allEvents = (typeof TOURNAMENT_EVENTS !== 'undefined') ? TOURNAMENT_EVENTS : [];
+            
+            const deadlineWeeks = (WEBSITE_CONTENT.registration && WEBSITE_CONTENT.registration.deadlineWeeksBefore) ? WEBSITE_CONTENT.registration.deadlineWeeksBefore : 2;
+            const msDeadlineBuffer = deadlineWeeks * 7 * 24 * 60 * 60 * 1000;
 
-    // Nur Turniere holen, die heute laufen oder in der Zukunft liegen
-    const activeEvents = allEvents.filter(event => {
-        const tDate = new Date(event.datum);
-        return isSameDay(tDate, heuteDatum) || tDate.getTime() > heuteDatum.getTime();
-    });
+            const activeEvents = allEvents.filter(event => {
+                const tDate = new Date(event.datum);
+                return isSameDay(tDate, heuteDatum) || tDate.getTime() > heuteDatum.getTime();
+            });
 
-    activeEvents.forEach(event => {
-        const opt = document.createElement('option');
-        const tDate = new Date(event.datum);
-        const formatSport = event.sport === 'halle' ? "Halle" : "Beach";
-        
-        // BERECHNUNG DER SPERRE:
-        // Wir ziehen vom Turnierdatum die Pufferzeit ab. Das ist der exakte Anmeldeschluss.
-        const deadlineDate = new Date(tDate.getTime() - msDeadlineBuffer);
+            activeEvents.forEach(event => {
+                const opt = document.createElement('option');
+                const tDate = new Date(event.datum);
+                const formatSport = event.sport === 'halle' ? "Halle" : "Beach";
+                
+                const deadlineDate = new Date(tDate.getTime() - msDeadlineBuffer);
+                const isExpired = heuteDatum.getTime() > deadlineDate.getTime();
 
-        // Wenn "heute" NACH diesem Anmeldeschluss ist, wird das Turnier gesperrt!
-        const isExpired = heuteDatum.getTime() > deadlineDate.getTime();
-
-        opt.value = event.title;
-        if (isExpired) {
-            opt.text = `${event.title} (${formatSport}) - ❌ ANMELDUNG GESCHLOSSEN`;
-            opt.disabled = true;
-        } else {
-            opt.text = `${event.title} (${formatSport} - ${tDate.getDate()}.${tDate.getMonth() + 1}.${tDate.getFullYear()})`;
+                opt.value = event.title;
+                if (isExpired) {
+                    opt.text = `${event.title} (${formatSport}) - ❌ ANMELDUNG GESCHLOSSEN`;
+                    opt.disabled = true;
+                } else {
+                    opt.text = `${event.title} (${formatSport} - ${tDate.getDate()}.${tDate.getMonth() + 1}.${tDate.getFullYear()})`;
+                }
+                select.appendChild(opt);
+            });
         }
-        select.appendChild(opt);
-    });
-}
 
         function renderSportContent(type) {
             const gridHeute = document.getElementById('grid-sec-heute');
@@ -687,6 +704,23 @@
             buildTournamentDropdown();
         }
 
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('news-email').value;
+            
+            const config = WEBSITE_CONTENT.newsletter || {};
+            const receiver = config.receiverEmail || "newsletter@example.com";
+            const subject = config.mailSubject || "Newsletter-Anmeldung";
+            const bodyTemplate = config.mailBody || "Bitte fügen Sie mich hinzu: [EMAIL]";
+            
+            const finalBody = bodyTemplate.replace("[EMAIL]", email);
+            
+            window.location.href = `mailto:${receiver}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(finalBody)}`;
+            
+            alert("Newsletter-Anmeldung generiert!");
+            document.getElementById('newsletterForm').reset();
+        }
+
         function renderStaticTexts() {
             const title = WEBSITE_CONTENT.headerTitle || "Volleyball Turniere - FBG";
             const parts = title.includes(' - ') ? title.split(' - ') : [title, "FBG"];
@@ -709,7 +743,6 @@
             document.getElementById('reg-footer-text').innerText = WEBSITE_CONTENT.registration.footerText;
             document.getElementById('reg-submit-btn').innerText = WEBSITE_CONTENT.registration.submitBtnText;
             
-            // Fristanzeige befüllen
             const dWeeks = (WEBSITE_CONTENT.registration && WEBSITE_CONTENT.registration.deadlineWeeksBefore) ? WEBSITE_CONTENT.registration.deadlineWeeksBefore : 2;
             document.getElementById('deadline-weeks-display').innerText = dWeeks;
 
@@ -719,6 +752,13 @@
             document.getElementById('lbl-reg-leiter').innerText = WEBSITE_CONTENT.registration.labels.leiter;
             document.getElementById('lbl-reg-email').innerText = WEBSITE_CONTENT.registration.labels.email;
             document.getElementById('lbl-reg-telefon').innerText = WEBSITE_CONTENT.registration.labels.telefon;
+
+            if (WEBSITE_CONTENT.newsletter) {
+                document.getElementById('news-card-title').innerText = WEBSITE_CONTENT.newsletter.title;
+                document.getElementById('news-text').innerText = WEBSITE_CONTENT.newsletter.text;
+                document.getElementById('news-email').setAttribute('placeholder', WEBSITE_CONTENT.newsletter.placeholder);
+                document.getElementById('news-submit-btn').innerText = WEBSITE_CONTENT.newsletter.submitBtnText;
+            }
 
             document.getElementById('about-title').innerText = WEBSITE_CONTENT.aboutUs.title;
             document.getElementById('about-text').innerText = WEBSITE_CONTENT.aboutUs.text;
@@ -730,6 +770,13 @@
             const rec = WEBSITE_CONTENT.contact.receiverEmail || "info@example.com";
             const sub = WEBSITE_CONTENT.contact.mailSubject || "Anfrage";
             document.getElementById('contact-btn').setAttribute('href', `mailto:${rec}?subject=${encodeURIComponent(sub)}`);
+
+            // NEU: STATIC TEXT RENDERING FÜR IMPRESSUM
+            if (WEBSITE_CONTENT.impressum) {
+                document.getElementById('impressum-title').innerText = WEBSITE_CONTENT.impressum.title;
+                document.getElementById('impressum-angaben').innerText = WEBSITE_CONTENT.impressum.angaben;
+                document.getElementById('impressum-text').innerHTML = WEBSITE_CONTENT.impressum.text;
+            }
         }
 
         window.onload = function() {

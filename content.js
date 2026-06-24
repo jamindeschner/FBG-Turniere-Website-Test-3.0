@@ -6,7 +6,7 @@
 const WEBSITE_CONTENT = {
     currentActiveSport: "beach", // Standard beim Laden der Seite ("halle" oder "beach")
     headerTitle: "Volleyball Turniere - FBG Erlangen",
-    emailReceiverDummy: "anmeldung@fbg-volleyball.de",
+    emailReceiverDummy: "fbgerlangen.volleyball@gmail.com",
 
     // --- HINTERGRUNDBILDER (Hier einfach deine Wunsch-Links eintragen) ---
     bgImageHalle: "bilder/Background-Halle-general.png", // Hintergrund für Halle
@@ -58,7 +58,7 @@ const WEBSITE_CONTENT = {
     // --- SEKTION: ANMELDUNGS-BLOCK ---
     registration: {
         title: "Turnieranmeldung",
-	deadlineWeeksBefore: 2, // <--- Bestimmt die Anzahl an Wochen vor einem Turnier, bis wann die Anmeldung noch möglich ist
+        deadlineWeeksBefore: 2, // <--- Bestimmt die Anzahl an Wochen vor einem Turnier, bis wann die Anmeldung noch möglich ist
         auditWarningBox: "⚠️ <strong>Hinweis zur Prüfung:</strong> Da deine Gemeinde noch nicht in unserer Datenbank registriert ist, wird deine Anmeldung von der Turnierleitung manuell geprüft. Du erhältst im Anschluss eine Bestätigung.",
         leftText: "Fülle das Formular vollständig aus. Nach dem Absenden öffnet sich dein E-Mail-Programm mit einer vorgefertigten Nachricht. Schicke diese einfach ab, um dein Team anzumelden.",
         footerText: "Ihr möchtet mehrere Teams anmelden? \nSendet das Formular einfach mehrfach ab und vermerkt dies im ''Sonstiges''-Feld. Bitte beachtet, dass die Anmeldung erst mit Erhalt unserer Bestätigungsmail verbindlich ist.",
@@ -77,6 +77,17 @@ const WEBSITE_CONTENT = {
         }
     },
 
+    // --- SEKTION: NEWSLETTER ---
+    newsletter: {
+        title: "Newsletter abonnieren",
+        text: "Bleibe immer auf dem Laufenden! Trage deine E-Mail-Adresse ein, um automatische Benachrichtigungen über zukünftige Turniere zu erhalten.",
+        placeholder: "Deine E-Mail-Adresse",
+        submitBtnText: "Für Newsletter anmelden",
+        receiverEmail: "fbgerlangen.volleyball@gmail.com", // Die Ziel-Adresse für die Anmeldung
+        mailSubject: "Anmeldung zum Volleyball-Newsletter",
+        mailBody: "Hallo FBG-Team,\n\nhiermit möchte ich mich für den Volleyball-Newsletter anmelden.\n\nBitte fügt folgende E-Mail-Adresse hinzu: [EMAIL]\n\nViele Grüße!"
+    },
+
     // --- SEKTION: ÜBER UNS ---
     aboutUs: {
         title: "Über uns",
@@ -88,7 +99,7 @@ const WEBSITE_CONTENT = {
         title: "Kontakt & Fragen",
         info: "Hast du Fragen zum Regelwerk, zum Ablauf oder möchtest du uns Feedback geben? Schreib uns einfach eine E-Mail – wir melden uns schnellstmöglich bei dir!",
         btnText: "Jetzt Nachricht schreiben",
-        receiverEmail: "info@fbg-volleyball.de",
+        receiverEmail: "fbgerlangen.volleyball@gmail.com",
         mailSubject: "Anfrage über Volleyball-Webseite"
     },
 
@@ -106,5 +117,12 @@ const WEBSITE_CONTENT = {
         statusNewCommunity: "Neu (Muss geprüft werden)",
         statusExistingCommunity: "Bereits registriert",
         body: "Hallo FBG-Turnierleitung,\n\nhiermit melde ich mein Team verbindlich an:\n\nTurnierart: [TURNIER]\nTeamname: [TEAM]\nGemeinde/Verein: [GEMEINDE] (Status: [STATUS])\n\nAnsprechpartner: [LEITER]\nE-Mail: [EMAIL]\nTelefon: [TELEFON]\n\nViele Grüße,\n[LEITER]"
+    },
+
+    // --- SEKTION: IMPRESSUM ---
+    impressum: {
+        title: "Impressum",
+        angaben: "Angaben gemäß § 5 DDG",
+        text: "Freie Baptisten-Gemeinde Erlangen\nSchallershofer Straße 72a\n91056 Erlangen\n\n<strong>Vertreten durch:</strong>\nJamin Deschner\n\n<strong>Kontakt:</strong>\nfbgerlangen.volleyball@gmail.com"
     }
 };
