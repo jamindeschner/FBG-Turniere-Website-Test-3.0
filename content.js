@@ -36,11 +36,11 @@ const WEBSITE_CONTENT = {
     tournamentDetails: {
         halle: {
             title: "Regeln und Spielablauf",
-            text: "Gespielt wird nach den offiziellen Mixed-Regeln (mind. 2 Frauen auf dem Feld). Die Netzhöhe beträgt standardmäßig 2,35m."
+            text: "-ab 13 Jahren \n- 6 Spieler, darunter 2 Frauen und mind. 1 Frau immer auf dem Feld \n- Es kann zu jeder Zeit ein beliebiger Spieler mit einem der Auswechselspieler tauschen \n- Gruppenspiele auf Punkte bis 25 (max. 15min) \n- Ohne Libero-Regel(n) \n- Der Ball darf mit allen Körperteilen gespielt werden \n- Netzberührungen sind nur erlaubt, wenn die Aktion nichts mit dem Spielgeschehen zu tun hatte \n- Übertreten der Mittellinie (Fußteil über der Linie) gilt als Fehler \n- Ein Vorderspieler darf in jeder Höhe einen Angriffsschlag ausführen \n- Ein Hinterspieler darf HINTER der Angriffslinie in jeder Höhe angreifen --> Auf/Vor der Angriffslinie darf ein Angriffsschlag nur unterhalb der Netzkante erfolgen \n- Nur Vorderspieler dürfen blocken \n- Der Block zählt nicht als erste Ballberührung \n- Nur beim Blocken eines Angriffsschlags darf der Ball in der gegnerischen Spielhälfte getroffen werden (entscheidend ist die Position des Balles, nicht der Hand) "
         },
         beach: {
             title: "Regeln und Spielablauf",
-            text: "- 6 Spieler pro Team, darunter mind. 2 Frauen und mind. 1 Frau immer auf dem Feld \n- Gruppenspiele auf Punkte bis 25 (max. 15min) \n- keine Beach-Technikregeln \n- Netzberührung ist ein Fehler \n- Übertreten unter dem Netz ist nur ein Fehler, wenn ein Gegner dadurch behindert oder gefährdet wird"
+            text: "- ab 13 Jahren \n- 6 Spieler pro Team, darunter mind. 2 Frauen und mind. 1 Frau immer auf dem Feld \n- Gruppenspiele auf Punkte bis 25 (max. 15min) \n- keine Beach-Technikregeln \n- Netzberührung ist ein Fehler \n- Übertreten unter dem Netz ist nur ein Fehler, wenn ein Gegner dadurch behindert oder gefährdet wird"
         }
     },
 
@@ -64,8 +64,8 @@ const WEBSITE_CONTENT = {
         footerText: "Ihr möchtet mehrere Teams anmelden? \nSendet das Formular einfach mehrfach ab und vermerkt dies im ''Sonstiges''-Feld. Bitte beachtet, dass die Anmeldung erst mit Erhalt unserer Bestätigungsmail verbindlich ist.",
         submitBtnText: "Anmeldung via E-Mail absenden",
         labels: {
-            gemeinde: "Wähle deine Gemeinde / Verein",
-            newGemeinde: "Name der neuen Gemeinde/Verein",
+            gemeinde: "Wähle deine Gemeinde",
+            newGemeinde: "Name der neuen Gemeinde",
             teamname: "Dein Teamname",
             leiter: "Name des Teamleiters",
             email: "E-Mail-Adresse",

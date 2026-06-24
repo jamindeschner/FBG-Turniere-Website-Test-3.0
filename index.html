@@ -105,7 +105,7 @@
         .sport-toggle.beach-active .toggle-slider { transform: translateX(100%); }
 
         /* --- TYPOGRAPHY --- */
-        .section-headline { font-size: 1.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-on-bg); }
+        .section-headline { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-on-bg); }
         .section-headline span { color: var(--accent-primary); }
         .section-intro-text { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 700px; line-height: 1.6; }
 
@@ -155,7 +155,17 @@
         .btn-toggle-details { background: transparent !important; color: var(--text-on-bg) !important; border: 2px solid var(--accent-primary) !important; }
         
         .badge-info { background: #ea580c; color: white; padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; display: inline-block; line-height: 1.4; }
-        .deadline-info { background: rgba(14, 165, 233, 0.15); border: 1px solid var(--accent-primary); color: #fff; padding: 0.8rem; border-radius: 8px; font-size: 0.9rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .deadline-info { 
+    background: rgba(14, 165, 233, 0.15); 
+    border: 1px solid var(--accent-primary); 
+    color: #fff; 
+    padding: 0.8rem; 
+    border-radius: 8px; 
+    font-size: 0.9rem; 
+    margin-bottom: 1.5rem; 
+    display: block; /* Normaler Block-Kasten, kein Flexbox */
+    line-height: 1.5; /* Schöner Zeilenabstand für Fließtext */
+}
 
         /* --- TURNIERLISTE --- */
         .archive-section-title { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; margin: 3rem 0 1.5rem 0; color: var(--text-on-bg); letter-spacing: -0.5px; }
@@ -261,14 +271,14 @@
             <h2 id="reg-card-title">Turnieranmeldung</h2>
             <div class="registration-grid">
                 <div>
-                    <div class="badge-info" id="audit-warning-box"></div>
-                    <div class="deadline-info" id="deadline-info-box">⏱️ Die Anmeldung schließt <span id="deadline-weeks-display">X</span> Wochen vor Turnierbeginn.</div>
+                    <div class="deadline-info" id="deadline-info-box">⏱️&nbsp;Die Anmeldung schließt <span id="deadline-weeks-display">X</span>&nbsp;Wochen vor Turnierbeginn.</div>
                     <p id="reg-left-text"></p>
                     <p id="reg-footer-text" style="margin-top: 1.5rem; font-style: italic; opacity: 0.7;"></p>
                 </div>
                 <div>
                     <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)">
-                        <div class="form-group"><label id="lbl-reg-turnier">Gewünschtes Turnier</label><select class="form-control" id="reg-turnier-select" required></select></div>
+                        <div class="badge-info" id="audit-warning-box"></div>
+			<div class="form-group"><label id="lbl-reg-turnier">Gewünschtes Turnier</label><select class="form-control" id="reg-turnier-select" required></select></div>
                         <div class="form-group"><label id="lbl-reg-gemeinde">Gemeinde</label><select class="form-control" id="reg-gemeinde-select" onchange="checkCommunityStatus()" required></select></div>
                         <div class="form-group" id="new-community-group" style="display: none;"><label id="lbl-reg-new-gemeinde">Neue Gemeinde</label><input type="text" class="form-control" id="reg-new-gemeinde-name"></div>
                         <div class="form-group"><label id="lbl-reg-teamname">Teamname</label><input type="text" class="form-control" id="reg-teamname" required></div>
