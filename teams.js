@@ -6,8 +6,29 @@
 
 const REGISTERED_COMMUNITIES = [
     "FBG Erlangen",
-    "Landeskirchliche Gemeinschaft Erlangen",
-    "Freie evangelische Gemeinde (FeG) Erlangen",
-    "Baptisten Gemeinde Fürth",
-    "EFG Nürnberg"
+    "FBG Ingolstadt",
+    "FBG Eichstätt",
+    "FBG Oberpfraundorf",
+    "FBG Eckental",
+    "FBG Neumarkt",
+    "FBG Nürnberg",
+    "FBG Röttenbach",
+    "FBG Würzburg",
+    "FBG Landshut",
+    "FBG Bad-Heilbrunn",
+    "Fränkische Volksmission Nürnberg",
+    "Bibelgemeinde Wilhermsdorf",
+    "Christliche Gemeinde Bamberg",
+    "Christliche Versammlung Augsburg",
+//    "",
+//    "",
+//    "",
+//    "",
+//    "",
+//    "",
+//    "",
+//    "",
+//    "",
+
+
 ];

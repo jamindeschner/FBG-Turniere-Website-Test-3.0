@@ -22,14 +22,14 @@ const WEBSITE_CONTENT = {
     ticker: {
         countdownPrefix: "⏳ Nächstes [SPORT]: ",
         runningNow: "🔥 Das [SPORT] läuft JETZT live! Komm vorbei!",
-        archiveMode: "✅ Das letzte [SPORT] ist beendet. Ergebnisse im Turnier-Archiv!",
+        archiveMode: "✅ Das letzte [SPORT] ist beendet. Sie dir die Bilder an, die gemacht wurden!",
         noEvent: "📅 Aktuell ist kein [SPORT] geplant. Schau bald wieder vorbei!"
     },
 
     // --- BANNER WENN KEIN TURNIER GEPLANT IST ---
     unknownDateBanner: {
         title: "Nächster Termin in Vorbereitung",
-        text: "Wir planen bereits fleißig das nächste Event für euch. Sobald das Datum und die Location feststehen, kannst du dich hier wie gewohnt anmelden!"
+        text: "Wir planen bereits fleißig das nächste Event für euch. Sobald wir die nötigen Details wissen, findest du alle Informationen hier!"
     },
 
     // --- SEKTION: DETAILS ZUR SPIELART (UNTER DER TURNIERLISTE) ---
@@ -57,16 +57,16 @@ const WEBSITE_CONTENT = {
 
     // --- SEKTION: ANMELDUNGS-BLOCK ---
     registration: {
-        title: "Turnieranmeldung",
+        title: "Turnier-Anmeldung",
         deadlineWeeksBefore: 2, // <--- Bestimmt die Anzahl an Wochen vor einem Turnier, bis wann die Anmeldung noch möglich ist
         auditWarningBox: "⚠️ <strong>Hinweis zur Prüfung:</strong> Da deine Gemeinde noch nicht in unserer Datenbank registriert ist, wird deine Anmeldung von der Turnierleitung manuell geprüft. Du erhältst im Anschluss eine Bestätigung.",
-        leftText: "Fülle das Formular vollständig aus. Nach dem Absenden öffnet sich dein E-Mail-Programm mit einer vorgefertigten Nachricht. Schicke diese einfach ab, um dein Team anzumelden.",
-        footerText: "Ihr möchtet mehrere Teams anmelden? \nSendet das Formular einfach mehrfach ab und vermerkt dies im ''Sonstiges''-Feld. Bitte beachtet, dass die Anmeldung erst mit Erhalt unserer Bestätigungsmail verbindlich ist.",
+        leftText: "Fülle das Formular vollständig aus. Nach dem Absenden öffnet sich dein E-Mail-Programm mit einer vorgefertigten Nachricht. Schicke diese einfach ab, um dein Team anzumelden. Bitte beachte, dass die Anmeldung erst mit Erhalt unserer Bestätigungsmail verbindlich ist.",
+        footerText: "Du möchtest mehrere Teams anmelden? \nSende das Formular einfach mehrfach ab und vermerke dies im ''Sonstiges''-Feld.",
         submitBtnText: "Anmeldung via E-Mail absenden",
         labels: {
             gemeinde: "Wähle deine Gemeinde",
             newGemeinde: "Name der neuen Gemeinde",
-            teamname: "Dein Teamname",
+            teamname: "Euer Teamname",
             leiter: "Name des Teamleiters",
             email: "E-Mail-Adresse",
             telefon: "Telefonnummer / Mobil"
@@ -85,7 +85,7 @@ const WEBSITE_CONTENT = {
         submitBtnText: "Für Newsletter anmelden",
         receiverEmail: "fbgerlangen.volleyball@gmail.com", // Die Ziel-Adresse für die Anmeldung
         mailSubject: "Anmeldung zum Volleyball-Newsletter",
-        mailBody: "Hallo FBG-Team,\n\nhiermit möchte ich mich für den Volleyball-Newsletter anmelden.\n\nBitte fügt folgende E-Mail-Adresse hinzu: [EMAIL]\n\nViele Grüße!"
+        mailBody: "Hallo Turnierleitung der FBG Erlangen,\n\nhiermit möchte ich mich für den Volleyball-Newsletter anmelden.\n\nBitte fügt folgende E-Mail-Adresse hinzu: [EMAIL]\n\nViele Grüße!"
     },
 
     // --- SEKTION: ÜBER UNS ---
@@ -100,7 +100,7 @@ const WEBSITE_CONTENT = {
         info: "Hast du Fragen zum Regelwerk, zum Ablauf oder möchtest du uns Feedback geben? Schreib uns einfach eine E-Mail – wir melden uns schnellstmöglich bei dir!",
         btnText: "Jetzt Nachricht schreiben",
         receiverEmail: "fbgerlangen.volleyball@gmail.com",
-        mailSubject: "Anfrage über Volleyball-Webseite"
+        mailSubject: "Anfrage über Webseite: Volleyball Turniere - FBG Erlangen"
     },
 
     // --- FOTO-GALERIE PROMPT ---
@@ -108,7 +108,7 @@ const WEBSITE_CONTENT = {
         btnExternalText: "📸 Fotos ansehen",
         btnExternalComingSoon: "⏳ Galerie bald verfügbar",
         promptText: "🔒 Dieses Album ist geschützt.\nBitte gib das turnierspezifische Passwort ein:",
-        errorText: "❌ Falsches Passwort. Der Zugriff auf das Google Fotos Album wurde verweigert."
+        errorText: "❌ Falsches Passwort. Der Zugriff auf das Photo-Album wurde verweigert."
     },
 
     // --- E-MAIL FORMULAR-TEMPLATE ---
@@ -116,13 +116,13 @@ const WEBSITE_CONTENT = {
         subject: "[ANMELDUNG] [TURNIER] - Team: [TEAM]",
         statusNewCommunity: "Neu (Muss geprüft werden)",
         statusExistingCommunity: "Bereits registriert",
-        body: "Hallo FBG-Turnierleitung,\n\nhiermit melde ich mein Team verbindlich an:\n\nTurnierart: [TURNIER]\nTeamname: [TEAM]\nGemeinde/Verein: [GEMEINDE] (Status: [STATUS])\n\nAnsprechpartner: [LEITER]\nE-Mail: [EMAIL]\nTelefon: [TELEFON]\n\nViele Grüße,\n[LEITER]"
+        body: "Hallo Turnierleitung der FBG Erlangen,\n\nhiermit melde ich mein Team verbindlich an:\n\nTurnier: [TURNIER]\nTeamname: [TEAM]\nGemeinde: [GEMEINDE] (Status: [STATUS])\n\nAnsprechpartner: [LEITER]\nE-Mail: [EMAIL]\nTelefon: [TELEFON]\n\nViele Grüße,\n[LEITER]"
     },
 
     // --- SEKTION: IMPRESSUM ---
     impressum: {
         title: "Impressum",
         angaben: "Angaben gemäß § 5 DDG",
-        text: "Freie Baptisten-Gemeinde Erlangen\nSchallershofer Straße 72a\n91056 Erlangen\n\n<strong>Vertreten durch:</strong>\nJamin Deschner\n\n<strong>Kontakt:</strong>\nfbgerlangen.volleyball@gmail.com"
+        text: "Freie Baptisten-Gemeinde Erlangen\nSchallershofer Straße 72a\n91056 Erlangen\n\n<strong>Vertreten durch:</strong>\nJamin Deschner\n\n<strong>Kontakt:</strong>\nfbgerlangen.volleyball@gmail.com \n\nStand: 2026"
     }
 };
